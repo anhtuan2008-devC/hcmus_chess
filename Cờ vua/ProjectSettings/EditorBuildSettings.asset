@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 56c0879793e5c1148b87aa9e527a1075
+  - enabled: 1
+    path: Assets/Scenes/OptionPlayGame.unity
+    guid: e5085d1d043857840bfd68352a90f845
+  - enabled: 1
+    path: Assets/Scenes/GameCountless.unity
+    guid: c71a18ef3dd488546ac4a4288c6cc8f3
+  - enabled: 1
+    path: Assets/Scenes/Game3minsMode.unity
+    guid: a0b957cf219c9bd41a107b6d604cc930
+  - enabled: 1
+    path: Assets/Scenes/Game15minsMode.unity
+    guid: 5db975255e7bddb458d6274ee6aba4ae
+  - enabled: 1
+    path: Assets/Scenes/Game90minsMode.unity
+    guid: 87350601385f81e44bf75050dfe52720
+  - enabled: 1
+    path: Assets/Scenes/About.unity
+    guid: 1c76045816c32724389f80d1246bcd7c
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0
