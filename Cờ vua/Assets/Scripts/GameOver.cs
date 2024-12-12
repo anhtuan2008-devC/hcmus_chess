@@ -24,4 +24,12 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene("GameCountless");
     }
+    public void LoadRestartPvECountless()
+    {
+        SceneManager.LoadScene("GamePvEMode");
+    }
+    public void LoadRestartPvECountlessMed()
+    {
+        SceneManager.LoadScene("GamePvEModeMed");
+    }
 }

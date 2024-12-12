@@ -71,4 +71,24 @@ public class OptionGamePlay : MonoBehaviour
     {
         SceneManager.LoadScene("GamePvEMode");
     }
+    public void LoadPvECountless()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlaySFX(audioManager.startGameClip);
+        }
+        Invoke("PvECountless", 0.7f);
+    }
+    public void PvECountlessMed()
+    {
+        SceneManager.LoadScene("GamePvEModeMed");
+    }
+    public void LoadPvECountlessMed()
+    {
+        if (audioManager != null)
+        {
+            audioManager.PlaySFX(audioManager.startGameClip);
+        }
+        Invoke("PvECountlessMed", 0.7f);
+    }
 }
