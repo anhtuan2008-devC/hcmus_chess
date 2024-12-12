@@ -67,4 +67,8 @@ public class OptionGamePlay : MonoBehaviour
     {
         SceneManager.LoadScene("GameCountless");
     }
+    public void PvECountless()
+    {
+        SceneManager.LoadScene("GamePvEMode");
+    }
 }

@@ -9,6 +9,9 @@ using TMPro;
 
 public class Game : MonoBehaviour
 {
+    public bool isPvE = true; // true: Chế độ PvE, false: Chế độ PvP
+    private bool isAITurn = false; // Xác định lượt đi của máy
+
     public GameObject chesspiece;
     public GameObject gameOverObject;
 
@@ -126,7 +129,64 @@ public class Game : MonoBehaviour
             currentPlayer = "white";
             if (!IsGameOver()) { audioManager.PlaySFX(audioManager.whiteTurnClip); }
         }
+        isAITurn = !isAITurn;
+
+        if (isPvE && isAITurn)
+        {
+            StartCoroutine(PerformAIMove());
+        }
     }
+    private IEnumerator PerformAIMove()
+    {
+        yield return new WaitForSeconds(1f); // Chờ một chút để tạo cảm giác tự nhiên
+
+        // Lấy tất cả quân cờ của máy (ví dụ: quân đen nếu máy là "black")
+        List<GameObject> aiPieces = GetAllPieces("black");
+
+        foreach (GameObject piece in aiPieces)
+        {
+            Chessman cm = piece.GetComponent<Chessman>();
+            cm.InitiateMovePlates(); // Tạo danh sách các MovePlate
+
+            List<GameObject> movePlates = GetActiveMovePlates();
+
+            if (movePlates.Count > 0)
+            {
+                int index = UnityEngine.Random.Range(0, movePlates.Count); // Nếu muốn sử dụng Random của Unity
+                GameObject randomMove = movePlates[index];
+                randomMove.GetComponent<MovePlate>().OnMouseUp(); // Thực hiện nước đi
+                yield break;
+            }
+        }
+    }
+
+    // Lấy tất cả quân cờ thuộc phe cụ thể
+    private List<GameObject> GetAllPieces(string team)
+    {
+        List<GameObject> pieces = new List<GameObject>();
+
+        foreach (GameObject piece in GameObject.FindGameObjectsWithTag("Chessman"))
+        {
+            if (piece.GetComponent<Chessman>().GetPlayer() == team)
+            {
+                pieces.Add(piece);
+            }
+        }
+
+        return pieces;
+    }
+
+    // Lấy danh sách các MovePlate đang hoạt động
+    private List<GameObject> GetActiveMovePlates()
+    {
+        List<GameObject> movePlates = new List<GameObject>();
+        foreach (GameObject plate in GameObject.FindGameObjectsWithTag("MovePlate"))
+        {
+            movePlates.Add(plate);
+        }
+        return movePlates;
+    }
+
 
     public void Winner(string playerWinner)
     {

@@ -20,8 +20,10 @@ public class Chessman : MonoBehaviour
     public Sprite black_queen, black_knight, black_bishop, black_king, black_rook, black_pawn;
     public Sprite white_queen, white_knight, white_bishop, white_king, white_rook, white_pawn;
 
-    // Khởi tạo cho vua chưa di chuyển
-    //public bool kingMoved = false; 
+    public string GetPlayer()
+    {
+        return player;
+    }
 
     public void Activate()
     {

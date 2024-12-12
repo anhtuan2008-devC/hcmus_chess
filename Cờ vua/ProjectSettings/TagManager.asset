@@ -8,6 +8,7 @@ TagManager:
   - WinnerText
   - RestartText
   - Audio
+  - Chessman
   layers:
   - Default
   - TransparentFX

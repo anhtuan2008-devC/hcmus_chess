@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game3minsMode.unity
     guid: a0b957cf219c9bd41a107b6d604cc930
   - enabled: 1
+    path: Assets/Scenes/GamePvEMode.unity
+    guid: de6c7d400e404bc4ea84886df2329ca1
+  - enabled: 1
     path: Assets/Scenes/Game15minsMode.unity
     guid: 5db975255e7bddb458d6274ee6aba4ae
   - enabled: 1
