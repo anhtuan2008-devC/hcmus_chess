@@ -209,12 +209,15 @@ public class Chessman : MonoBehaviour
         if ((player == "white" && yBoard == 1) || (player == "black" && yBoard == 6))
         {
             int twoSquareMoveY = (player == "white") ? yBoard + 2 : yBoard - 2;
-            if (sc.PositionOnBoard(x, twoSquareMoveY) && sc.GetPosition(x, twoSquareMoveY) == null)
+            // Check if there's a piece blocking the 2-square move
+            if (sc.PositionOnBoard(x, twoSquareMoveY) && sc.GetPosition(x, twoSquareMoveY) == null &&
+                sc.GetPosition(x, y) == null)  // Ensure no piece in the square 1 step ahead
             {
                 MovePlateSpawn(x, twoSquareMoveY);  // Spawn move plate for 2-square move
             }
         }
     }
+
 
 
     private void PawnDiagonalAttack(int x, int y)
