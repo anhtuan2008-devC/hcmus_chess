@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Chessman : MonoBehaviour
 {
+    public string type;  // "pawn", "knight", "queen", "king", "rook", "bishop"
     // References to objects in the Unity Scene
     public GameObject controller;
     public GameObject movePlate;
@@ -31,22 +32,73 @@ public class Chessman : MonoBehaviour
         controller = GameObject.FindGameObjectWithTag("GameController");
         SetCoords();
 
-        // Set the correct sprite and player
         switch (this.name)
         {
-            case "black_queen": AssignSprite(black_queen, "black"); break;
-            case "black_knight": AssignSprite(black_knight, "black"); break;
-            case "black_bishop": AssignSprite(black_bishop, "black"); break;
-            case "black_king": AssignSprite(black_king, "black"); break;
-            case "black_rook": AssignSprite(black_rook, "black"); break;
-            case "black_pawn": AssignSprite(black_pawn, "black"); break;
-            case "white_queen": AssignSprite(white_queen, "white"); break;
-            case "white_knight": AssignSprite(white_knight, "white"); break;
-            case "white_bishop": AssignSprite(white_bishop, "white"); break;
-            case "white_king": AssignSprite(white_king, "white"); break;
-            case "white_rook": AssignSprite(white_rook, "white"); break;
-            case "white_pawn": AssignSprite(white_pawn, "white"); break;
+            case "black_queen":
+                AssignSprite(black_queen, "black");
+                type = "queen";  // Gán loại quân cờ
+                break;
+            case "black_knight":
+                AssignSprite(black_knight, "black");
+                type = "knight";  // Gán loại quân cờ
+                break;
+            case "black_bishop":
+                AssignSprite(black_bishop, "black");
+                type = "bishop";  // Gán loại quân cờ
+                break;
+            case "black_king":
+                AssignSprite(black_king, "black");
+                type = "king";  // Gán loại quân cờ
+                break;
+            case "black_rook":
+                AssignSprite(black_rook, "black");
+                type = "rook";  // Gán loại quân cờ
+                break;
+            case "black_pawn":
+                AssignSprite(black_pawn, "black");
+                type = "pawn";  // Gán loại quân cờ
+                break;
+            case "white_queen":
+                AssignSprite(white_queen, "white");
+                type = "queen";  // Gán loại quân cờ
+                break;
+            case "white_knight":
+                AssignSprite(white_knight, "white");
+                type = "knight";  // Gán loại quân cờ
+                break;
+            case "white_bishop":
+                AssignSprite(white_bishop, "white");
+                type = "bishop";  // Gán loại quân cờ
+                break;
+            case "white_king":
+                AssignSprite(white_king, "white");
+                type = "king";  // Gán loại quân cờ
+                break;
+            case "white_rook":
+                AssignSprite(white_rook, "white");
+                type = "rook";  // Gán loại quân cờ
+                break;
+            case "white_pawn":
+                AssignSprite(white_pawn, "white");
+                type = "pawn";  // Gán loại quân cờ
+                break;
         }
+        //        // Set the correct sprite and player
+        //        switch (this.name)
+        //{
+        //    case "black_queen": AssignSprite(black_queen, "black"); break;
+        //    case "black_knight": AssignSprite(black_knight, "black"); break;
+        //    case "black_bishop": AssignSprite(black_bishop, "black"); break;
+        //    case "black_king": AssignSprite(black_king, "black"); break;
+        //    case "black_rook": AssignSprite(black_rook, "black"); break;
+        //    case "black_pawn": AssignSprite(black_pawn, "black"); break;
+        //    case "white_queen": AssignSprite(white_queen, "white"); break;
+        //    case "white_knight": AssignSprite(white_knight, "white"); break;
+        //    case "white_bishop": AssignSprite(white_bishop, "white"); break;
+        //    case "white_king": AssignSprite(white_king, "white"); break;
+        //    case "white_rook": AssignSprite(white_rook, "white"); break;
+        //    case "white_pawn": AssignSprite(white_pawn, "white"); break;
+        //}
     }
 
     // Helper method for assigning sprites and player

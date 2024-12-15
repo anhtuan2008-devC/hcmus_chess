@@ -1,0 +1,192 @@
+{
+  "player_build_data": [
+    {
+      "type": "playerBuildTimingData",
+      "msg": {
+        "build_event_id": "c0f9e3026630d0540bb49b65b55feb18",
+        "build_player": 59938,
+        "preprocess_player": 52,
+        "produce_player_script_assemblies": 26485,
+        "build_scripts_dlls": 75,
+        "writing_asset_files": 4318,
+        "postprocess_built_player": 9865,
+        "node_summary_table": [
+          {
+            "name": "Csc",
+            "duration": 2779
+          },
+          {
+            "name": "Csc",
+            "duration": 474
+          },
+          {
+            "name": "Csc",
+            "duration": 839
+          },
+          {
+            "name": "Csc",
+            "duration": 3991
+          },
+          {
+            "name": "Csc",
+            "duration": 2237
+          },
+          {
+            "name": "Csc",
+            "duration": 2009
+          },
+          {
+            "name": "Csc",
+            "duration": 408
+          },
+          {
+            "name": "Csc",
+            "duration": 500
+          },
+          {
+            "name": "Csc",
+            "duration": 1013
+          },
+          {
+            "name": "Csc",
+            "duration": 1030
+          },
+          {
+            "name": "Csc",
+            "duration": 761
+          },
+          {
+            "name": "Csc",
+            "duration": 4560
+          },
+          {
+            "name": "Csc",
+            "duration": 1482
+          },
+          {
+            "name": "Csc",
+            "duration": 1295
+          },
+          {
+            "name": "Csc",
+            "duration": 970
+          },
+          {
+            "name": "Csc",
+            "duration": 2063
+          },
+          {
+            "name": "Csc",
+            "duration": 1246
+          },
+          {
+            "name": "Csc",
+            "duration": 1107
+          },
+          {
+            "name": "Csc",
+            "duration": 614
+          },
+          {
+            "name": "Csc",
+            "duration": 1002
+          },
+          {
+            "name": "Csc",
+            "duration": 3296
+          },
+          {
+            "name": "Csc",
+            "duration": 2029
+          },
+          {
+            "name": "Csc",
+            "duration": 479
+          },
+          {
+            "name": "Csc",
+            "duration": 599
+          },
+          {
+            "name": "Csc",
+            "duration": 175
+          },
+          {
+            "name": "Csc",
+            "duration": 772
+          },
+          {
+            "name": "Csc",
+            "duration": 1895
+          },
+          {
+            "name": "Csc",
+            "duration": 4458
+          },
+          {
+            "name": "Csc",
+            "duration": 4397
+          },
+          {
+            "name": "Csc",
+            "duration": 2414
+          },
+          {
+            "name": "Csc",
+            "duration": 1935
+          },
+          {
+            "name": "Csc",
+            "duration": 409
+          },
+          {
+            "name": "Csc",
+            "duration": 1692
+          },
+          {
+            "name": "Csc",
+            "duration": 786
+          },
+          {
+            "name": "Csc",
+            "duration": 1398
+          },
+          {
+            "name": "Csc",
+            "duration": 323
+          },
+          {
+            "name": "Csc",
+            "duration": 330
+          },
+          {
+            "name": "Csc",
+            "duration": 1415
+          },
+          {
+            "name": "Csc",
+            "duration": 1023
+          },
+          {
+            "name": "Csc",
+            "duration": 2769
+          },
+          {
+            "name": "UnityLinker.exe",
+            "duration": 1405
+          }
+        ]
+      },
+      "version": 1
+    },
+    {
+      "type": "unityLinkerData",
+      "msg": {
+        "build_event_id": "c0f9e3026630d0540bb49b65b55feb18",
+        "node_executed": true,
+        "option_rule_set": "Copy"
+      },
+      "version": 1
+    }
+  ]
+}

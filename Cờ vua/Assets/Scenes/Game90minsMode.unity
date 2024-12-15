@@ -1678,7 +1678,6 @@ MonoBehaviour:
   blackTurnClip: {fileID: 8300000, guid: 74aeb51742ba8df4fa1917b51c204903, type: 3}
   whiteWinClip: {fileID: 8300000, guid: c431690247ea66c43961b0086ff98e1f, type: 3}
   blackWinClip: {fileID: 8300000, guid: 42dab15c789c25c47b47bb3c7da22565, type: 3}
-  turnOffSound: {fileID: 0}
 --- !u!4 &878425550
 Transform:
   m_ObjectHideFlags: 0
@@ -2093,8 +2092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49923e34ffb31a64388dcf0fabaafde4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPvE: 0
   chesspiece: {fileID: 5378805365632866994, guid: 599352c1b59a6c34eb4d3f5a4a1d51aa, type: 3}
   gameOverObject: {fileID: 1102846961}
+  difficulty: 0
 --- !u!4 &1176651167
 Transform:
   m_ObjectHideFlags: 0

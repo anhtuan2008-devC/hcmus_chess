@@ -136,7 +136,7 @@ public class Game : MonoBehaviour
                 PerformEasyMove();
                 break;
             case DifficultyLevel.Medium:
-                PerformMediumMove();
+                PerformSmartMove();
                 break;
             case DifficultyLevel.Hard:
                 PerformHardMove();
@@ -177,6 +177,87 @@ public class Game : MonoBehaviour
         }
     }
 
+    private void PerformSmartMove()
+    {
+        List<GameObject> aiPieces = currentPlayer == "black" ? playerBlack : playerWhite;
+        GameObject bestPiece = null;
+        GameObject bestMovePlate = null;
+        int bestScore = int.MinValue;
+
+        foreach (var piece in aiPieces)
+        {
+            Chessman cm = piece.GetComponent<Chessman>();
+            cm.InitiateMovePlates();
+            List<GameObject> movePlates = GetActiveMovePlates();
+
+            foreach (var movePlate in movePlates)
+            {
+                int targetX = movePlate.GetComponent<MovePlate>().matrixX;
+                int targetY = movePlate.GetComponent<MovePlate>().matrixY;
+
+                GameObject targetPiece = positions[targetX, targetY];
+                int moveScore = 0;
+
+                // Tính điểm cho nước đi
+                if (targetPiece != null)
+                {
+                    Chessman targetCm = targetPiece.GetComponent<Chessman>();
+                    if (targetCm.player != currentPlayer)
+                    {
+                        moveScore += GetPieceValue(targetCm.type); // Giá trị quân cờ bị ăn
+                    }
+                }
+
+                // Thêm điểm cho vị trí chiến lược (nếu cần)
+                moveScore += EvaluatePosition(targetX, targetY);
+
+                // So sánh và chọn nước đi tốt nhất
+                if (moveScore > bestScore)
+                {
+                    bestScore = moveScore;
+                    bestPiece = piece;
+                    bestMovePlate = movePlate;
+                }
+            }
+        }
+
+        // Thực hiện nước đi tốt nhất
+        if (bestPiece != null && bestMovePlate != null)
+        {
+            int targetX = bestMovePlate.GetComponent<MovePlate>().matrixX;
+            int targetY = bestMovePlate.GetComponent<MovePlate>().matrixY;
+
+            GameObject targetPiece = positions[targetX, targetY];
+            if (targetPiece != null && targetPiece.GetComponent<Chessman>().player != currentPlayer)
+            {
+                Destroy(targetPiece);
+            }
+
+            bestMovePlate.GetComponent<MovePlate>().OnMouseUp();
+        }
+    }
+
+    // Hàm tính giá trị quân cờ
+    private int GetPieceValue(string type)
+    {
+        switch (type)
+        {
+            case "pawn": return 1;
+            case "knight": return 3;
+            case "bishop": return 3;
+            case "rook": return 5;
+            case "queen": return 9;
+            case "king": return 1000; // Giá trị rất cao để bảo vệ vua
+            default: return 0;
+        }
+    }
+
+    // Hàm đánh giá vị trí
+    private int EvaluatePosition(int x, int y)
+    {
+        // Ví dụ: Ưu tiên vị trí ở giữa bàn cờ
+        return (4 - Math.Abs(4 - x)) + (4 - Math.Abs(4 - y));
+    }
 
     private void PerformMediumMove()
     {

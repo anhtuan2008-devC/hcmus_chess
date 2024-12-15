@@ -1376,9 +1376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Medium
-
-'
+  m_text: Medium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c75c98d0879fd0945b69b3ad4920b9b5, type: 2}
   m_sharedMaterial: {fileID: -670081554310415481, guid: c75c98d0879fd0945b69b3ad4920b9b5, type: 2}
